@@ -1,107 +1,789 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
-<style>
-body{
-  /*background-color: black;
-  color: white;*/
-}
-div {
-  /*width: 320px;*/
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 120px;
-}
-h2, h3{
-  font-size: 40px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  margin: 90px 0 0 0;
-  font-weight: normal;
-}
-h3{
-  font-size: 30px;
-  margin: 10px 0 30px 0;
-}
-div p{
-  font-size: 220px;
-  line-height: 220px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  margin: 0;
-}
-div p.small{
-  font-size: 100px;
-  line-height: 100px;
-}
-#rikke, #ingse, #chr, #house{
-  display: none;
-}
-@media only screen and (max-width: 600px) {
-    div p {
-        font-size: 120px;
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="description" content="Så er der fest...">
+<meta name="keywords" content="Fødselsdag">
+<meta name="author" content="Christian Mehlbye Buch Greisen">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SITE TITLE -->
+<title>129 års fødselsdagsfest</title>
+
+<!-- =========================
+      FAV AND TOUCH ICONS  
+============================== -->
+<link rel="icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+<!-- =========================
+     STYLESHEETS   
+============================== -->
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- FONT ICONS -->
+<link rel="stylesheet" href="assets/elegant-icons/style.css">
+<link rel="stylesheet" href="assets/app-icons/styles.css">
+<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+
+<!-- WEB FONTS -->
+<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Passion+One:700" rel="stylesheet">
+
+
+<!-- CAROUSEL AND LIGHTBOX -->
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/nivo-lightbox.css">
+<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+
+<!-- ANIMATIONS -->
+<link rel="stylesheet" href="css/animate.min.css">
+
+<!-- CUSTOM STYLESHEETS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" href="css/colors/orange.css"> <!-- DEFAULT COLOR/ CURRENTLY USING -->
+<!-- <link rel="stylesheet" href="css/colors/red.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/green.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/purple.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/orange.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/blue-munsell.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/slate.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/yellow.css"> -->
+
+<!-- RESPONSIVE FIXES -->
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- JQUERY -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script type="text/javascript">
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 9,
+            scrollwheel: false,
+            
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(56.078254, 9.633826), // New York
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using our element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        // Let's also add a marker while we're at it
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(56.078254, 9.633826),
+            map: map,
+            title: 'HK'
+        });
     }
-}
-</style>
-</head>
-<body>
-
-<audio autoplay>
-  <!--<source src="horse.ogg" type="audio/ogg">-->
-  <source src="carnival-music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<div id="rikke">
-  <!-- <h2>Rikke</h2> -->
-  <p>43</p>
-</div>
-<div id="ingse">
-  <!-- <h2>Inge-Marie</h2> -->
-  <p>43</p>
-</div>
-<div id="chr">
-<!--   <h2>Christian</h2> -->  
-<p>43</p>
-</div>
-<div id="house">
-<!--   <h2>3 dage på Højkol</h2> -->  
-  <h3>save the date</h3>
-  <p class="small">25.-27. januar<!-- 01.02<br>02.02<br>03.02 --></p>
-</div>
-
-<script>
-  (function(t,e){"use strict";var n={pulses:1,interval:0,returnDelay:0,duration:500};t.fn.pulse=function(u,a,r){var i="destroy"===u;return"function"==typeof a&&(r=a,a={}),a=t.extend({},n,a),a.interval>=0||(a.interval=0),a.returnDelay>=0||(a.returnDelay=0),a.duration>=0||(a.duration=500),a.pulses>=-1||(a.pulses=1),"function"!=typeof r&&(r=function(){}),this.each(function(){function n(){return void 0===s.data("pulse")||s.data("pulse").stop?void 0:a.pulses>-1&&++p>a.pulses?r.apply(s):(s.animate(u,f),void 0)}var o,s=t(this),l={},d=s.data("pulse")||{};d.stop=i,s.data("pulse",d);for(o in u)u.hasOwnProperty(o)&&(l[o]=s.css(o));var p=0,c=t.extend({},a);c.duration=a.duration/2,c.complete=function(){e.setTimeout(n,a.interval)};var f=t.extend({},a);f.duration=a.duration/2,f.complete=function(){e.setTimeout(function(){s.animate(l,c)},a.returnDelay)},n()})}})(jQuery,window,document);
-
-  var timeOnScreen = 800;
-  var fadeInDuration = 1500;
-  var fadeOutDuration = 1500;
-
-  function appear(el){
-    return el.fadeIn(fadeInDuration);
-    //return el.animate({ 'zoom': 0.01 }, 0).show().animate({ 'zoom': 1 }, fadeInDuration);
-  }
-
-  $(document).ready( function() {
-    appear($("#rikke")).delay(timeOnScreen).fadeOut(fadeOutDuration, function(){
-      appear($("#ingse")).delay(timeOnScreen).fadeOut(fadeOutDuration, function(){
-        appear($("#chr")).delay(timeOnScreen).fadeOut(fadeOutDuration, function(){
-          appear($("#house")).delay(timeOnScreen, function(){
-            $("#house p").pulse({
-              fontSize: "103px"
-            }, {
-              duration : 2000, 
-              pulses : 20}
-            );
-          });
-        });    
-      });
-    });
-  });
 </script>
 
-</body>
-</html>
+
+</head>
+
+<body>
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div class="preloader">
+  <div class="status">&nbsp;</div>
+</div>
+
+<!-- =========================
+     HEADER   
+============================== -->
+<header class="header" data-stellar-background-ratio="0.5" id="home">
+
+<!-- COLOR OVER IMAGE -->
+<div class="color-overlay"> <!-- To make header full screen. Use .full-screen class with color overlay. Example: <div class="color-overlay full-screen">  -->
+
+	<!-- STICKY NAVIGATION -->
+	<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation">
+		<div class="container">
+			<div class="navbar-header">
+				
+				<!-- LOGO ON STICKY NAV BAR -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="#"><img width="75px" src="images/logo-black.png" alt=""></a>
+				
+			</div>
+			
+			<!-- NAVIGATION LINKS -->
+			<div class="navbar-collapse collapse" id="kane-navigation">
+				<ul class="nav navbar-nav navbar-right main-navigation">
+					<li><a href="#home">Start</a></li>
+					<li><a href="#features">Plan</a></li>
+					<li><a href="#venue">Venue</a></li>
+					<li><a href="#hvem">Fødselarer</a></li>
+					<li><a href="#brief1">Husk</a></li>
+					<li><a href="#download">S.U.</a></li>
+				</ul>
+			</div>
+		</div> <!-- /END CONTAINER -->
+	</div> <!-- /END STICKY NAVIGATION -->
+	
+	
+	<!-- CONTAINER -->
+	<div class="container">
+		
+		<!-- ONLY LOGO ON HEADER -->
+		<div class="only-logo">
+			<div class="navbar">
+				<div class="navbar-header">
+					<img width="250px" src="images/logo@2x.png" alt="">
+				</div>
+			</div>
+		</div> <!-- /END ONLY LOGO ON HEADER -->
+		
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				
+				<!-- HEADING AND BUTTONS -->
+				<div class="intro-section">
+					
+					<!-- WELCOM MESSAGE -->
+					<h1 class="intro">25.-27. januar 2019</h1>
+					<h5>Endnu en weekend du sent vil glemme</h5>
+					
+					<!-- BUTTON -->
+					<div class="buttons" id="download-button">
+						
+						<a href="#features" class="btn btn-default btn-lg standard-button">&nbsp;<i class="arrow_down"></i></a>
+						
+					</div>
+					<!-- /END BUTTONS -->
+					
+				</div>
+				<!-- /END HEADNING AND BUTTONS -->
+				
+			</div>
+		</div>
+		<!-- /END ROW -->
+		
+	</div>
+	<!-- /END CONTAINER -->
+</div>
+<!-- /END COLOR OVERLAY -->
+</header>
+<!-- /END HEADER -->
+
+<!-- =========================
+     FEATURES 
+============================== -->
+<section class="features" id="features">
+
+<div class="container">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
+		
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">The Plan</h2>
+		<div class="colored-line">
+		</div>
+		<div class="section-description col-md-6 col-md-offset-3">
+			Så er det tid igen. 
+			<br><br>
+      Vi skal fejre vores dødsyge ikke på nogen måde runde 43 års fødselsdage. <br>
+      Og du skal være med til at gøre weekenden uforglemmelig.   
+		</div>
+		<div class="colored-line">
+		</div>
+	</div>
+	<!-- /END SECTION HEADER -->
+	
+	
+	<div class="row">
+		
+		<!-- FEATURES LEFT -->
+		<div class="col-md-4 col-sm-4 features-left wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_clock_alt"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Ankomst fredag aften</h4>
+					<p>
+						 25. januar 2019 fra kl. 19:00<br>
+						 Hygge og afslapning med snacks og drikkevarer <br>(dog ingen aftensmad)
+
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+
+
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_music"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Tema: TBA</h4>
+					<p>
+						  Lørdag aftens tema afsløres mellem jul og nytår. 
+              Der vil være aktiviteter om lørdagen <em>Højkol outside</em>
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+
+
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_star_alt"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Blast from the past</h4>
+					<p>
+						 Vi skal feste i samme gear som vi gjorde for 20 år siden. Så vær beredt. Der kommer fart på. 
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+
+
+			
+		</div>
+		<!-- /END FEATURES LEFT -->
+		
+		<!-- PHONE IMAGE -->
+		<div class="col-md-4 col-sm-4">
+			<div class="phone-image wow bounceIn animated" data-wow-offset="120" data-wow-duration="1.5s">
+				<img src="images/disco.png" alt="">
+			</div>
+		</div>
+		
+		<!-- FEATURES RIGHT -->
+		<div class="col-md-4 col-sm-4 features-right wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_mug"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Søndagsbrunch</h4>
+					<p>
+						 Nyd din morgen i roligt tempo<br><br>
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+
+
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_heart_alt"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Ingen børn</h4>
+					<p>
+						 Strictly adults
+						 <br>
+						 <em>What happens in Højkol stays in Højkol</em>
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_house_alt"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Overnatning + fuld forplejning</h4>
+					<p>Læn jer tilbage og nyd weekenden</p>
+				</div>
+				
+			</div>
+			
+			<!-- /END SINGLE FEATURE -->
+			
+			
+		</div>
+		<!-- /END FEATURES RIGHT -->
+		
+	</div>
+	<!-- /END ROW -->
+	
+</div>
+<!-- /END CONTAINER -->
+
+</section>
+<!-- /END FEATURES SECTION -->
+
+
+
+
+<!-- =========================
+     Svar 
+============================== -->
+<!-- <section class="download" id="venue">
+
+<div class="color-overlay">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				
+				<div class="download-container">
+					<h1>The Venue</h1>
+					<div class="white-line"></div>
+					<h4>
+						Højkol
+					</h4>
+					<div class="company-info">
+						Grundlagt 1915 af Bommelum
+					</div>
+					
+					<div class="message">
+						<p>
+							600 kvm. 16 værelser. Balsal. Eminent udsigt over den-og-den dal. Etc. yada yada
+						</p>
+						<p>
+							Vi glæder os til at dele en god weekend med jer i skønne omgivelser
+						</p>
+					</div>
+				</div>		
+			</div> 
+			
+		</div> 
+		
+	</div>
+	
+</div>
+</section> -->
+<!-- /END DOWNLOAD SECTION -->
+
+
+
+
+<!-- =========================
+     Venue 
+============================== -->
+<section id="venue" class="testimonials venue">
+
+<div class="color-overlay">
+	
+	<div class="container wow fadeIn animated" data-wow-offset="10" data-wow-duration="2.5s">								<div>
+			<div class="feedback">
+				<h1>The Venue</h1>
+				<div class="white-line"></div>
+				<h4>
+					Højkol
+				</h4>
+				<div class="company-info">
+					Grundlagt 1906
+				</div>
+				
+				<div class="message">
+					<p>
+						16 værelser, billard, sauna og udsigt over Salten Langsø og Højkol Skov.
+						<br>Overnatning vil være på Højkol, og I den nærliggende skovhytte, Rævedal.
+					</p>
+					<p>
+						Vi glæder os til at dele en god weekend med jer i skønne omgivelser.
+					</p>
+				</div>
+
+			</div>	
+		</div>		
+	</div>	
+</div>
+</section>
+<!-- /END VENUE SECTION -->
+
+
+
+<!-- =========================
+		 Adresse
+============================== -->
+<section id="address">
+	<div class="container">
+
+		<!-- SECTION HEADER -->
+		<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		<br><br>
+			<!-- SECTION TITLE -->
+			<h2 class="dark-text">Adresse</h2>
+
+			<div class="colored-line">
+			</div>
+			<div class="section-description">
+				Højkolvej 23<br>
+				8380 Ry
+			</div>
+			<div class="colored-line">
+			</div>
+			
+			<div style="font-size:90%;line-height:1.6em;margin-top:20px;" class="section-description">
+				<p>Kan I ikke finde vej? Her er et par hints</p>
+				<p>
+					rute 461 mod Østbirk -&gt; Gl.Rye
+					<br>I Gl. Rye drej til venstre ad Hjarsbækvej mod Salten
+					<br>Efter ca 4,5 km drej til højre op ad Højkolvej (grusvej med stor rød port)
+					<br>Hold til højre når vejen deler sig (flere gange)
+				</p>
+			</div>
+
+			
+
+
+		</div>
+	<!-- /END SECTION HEADER -->
+
+	</div>
+<!-- /END CONTAINER -->
+</section>
+
+
+
+
+
+<!-- =========================
+     MAP 
+============================== -->
+<!-- <section class="app-brief" id="map">
+	<div id="map"></div>
+</section> -->
+
+
+<!-- =========================
+     TESTIMONIALS 
+============================== -->
+<section class="testimonials" id="hvem">
+
+<div class="color-overlay">
+	
+	<div class="container wow fadeIn animated" data-wow-offset="10" data-wow-duration="2.5s">			
+		
+		<!-- FEEDBACKS -->
+		<div id="feedbacks" class="owl-carousel owl-theme">
+
+			<!-- SINGLE FEEDBACK -->
+			<div class="feedback">
+
+				<!-- IMAGE -->
+				<div class="image">
+					<!-- i class=" icon_quotations"></i -->
+					<img src="images/people/1.jpg" alt="">
+				</div>
+
+				<!-- INFORMATION -->
+				<div class="name">
+					Rikke Kajhøj - 09.02.76
+				</div>
+				<div class="company-info">
+					Favorit drik: Brandbiler
+				</div>
+
+<!-- 			<div class="white-line">
+				</div>
+ -->
+				<div class="message">
+					 Rikke har grønne fingre og et blodrødt passioneret hjerte. Hun er for nylig blevet bidt af langrend, men står altid på snowboard ned til afterski.
+				</div>
+
+			</div>
+			<!-- /END SINGLE FEEDBACK -->
+
+			<!-- SINGLE FEEDBACK -->
+			<div class="feedback">
+
+				<!-- IMAGE -->
+				<div class="image">
+					<!-- i class=" icon_quotations"></i -->
+					<img src="images/people/2.jpg" alt="">
+				</div>
+
+				<!-- INFORMATION -->
+				<div class="name">
+					Inge-Marie Ejby Buch Greisen - 05.01.76
+				</div>
+
+				<div class="company-info">
+					Favorit bakkedrik: Glühwein
+				</div>
+
+<!-- 			<div class="white-line">
+				</div>
+ -->
+				<div class="message">
+					 Arkitekt og Ultimatespiller som ser blændende ud i pallietter. Foretrak i en lang periode Snowboard, men er vendt tilbage på slalomski.
+				</div>
+
+			</div>
+			<!-- /END SINGLE FEEDBACK -->
+
+			<!-- SINGLE FEEDBACK -->
+			<div class="feedback">
+
+				<!-- IMAGE -->
+				<div class="image">
+					<!-- i class=" icon_quotations"></i -->
+					<img src="images/people/3.jpg" alt="">
+				</div>
+
+				<!-- INFORMATION -->
+				<div class="name">
+					Christian Mehlbye Buch Greisen - 21.01.76
+				</div>
+
+				<div class="company-info">
+					Favorit bakkedrik: Singlemalt Whisky
+				</div>
+
+<!-- 			<div class="white-line">
+				</div>
+ -->
+				<div class="message">
+					Hurtig. Frygtløs.
+					<br>
+					Bakkernes konge. 
+				</div>
+
+			</div>
+			<!-- /END SINGLE FEEDBACK -->
+			
+		</div>
+		<!-- /END FEEDBACKS -->
+		
+	</div>
+	<!-- /END CONTAINER -->
+	
+</div>
+<!-- /END COLOR OVERLAY -->
+
+</section>
+<!-- /END TESTIMONIALS SECTION -->
+
+
+<!-- =========================
+     Husk 
+============================== -->
+<section class="app-brief grey-bg" id="brief1">
+
+<div class="container">
+	
+	<div class="row">
+		
+		<!-- PHONES IMAGE -->
+		<div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+			<div class="phone-image">
+				<img src="images/deers.png" alt="">
+			</div>
+		</div>
+		
+		<!-- RIGHT SIDE WITH BRIEF -->
+		<div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+			
+			<!-- SECTION TITLE -->
+			<h2 class="dark-text">Du skal huske</h2>
+			
+			<div class="colored-line-left">
+			</div>
+			
+			<!-- <p>
+				Husk husk husk
+			</p> -->
+			
+			<!-- FEATURE LIST -->
+			<ul class="feature-list">
+				<li><i class="icon_plus_alt2"></i>Sengetøj og sutsko/indesko</li>
+				<li><i class="icon_plus_alt2"></i>Håndklæde, badetøj og badekåbe</li>
+<!-- 				<li><i class="icon_plus_alt2"></i>Skitøj (100%)</li> -->
+				<li><i class="icon_plus_alt2"></i>Festtøj (No restrictions - feel free to impress)</li>
+				<li><i class="icon_plus_alt2"></i>Tonsvis af festligt humør</li>
+			</ul>
+			
+		</div>
+		<!-- /END RIGHT BRIEF -->
+		
+	</div>
+	<!-- /END ROW -->
+	
+</div>
+<!-- /END CONTAINER -->
+
+</section>
+<!-- /END SECTION -->
+
+
+
+<!-- =========================
+     Svar 
+============================== -->
+<section class="download" id="download">
+
+<div class="color-overlay">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				
+				<!-- DOWNLOAD BUTTONS AREA -->
+				<div class="download-container">
+					<h2 class=" wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">Meld venligst tilbage på email</h2>
+					<h4>S.U. inden d. 19. December 2018</h4>
+				</div>
+				<!-- END OF DOWNLOAD BUTTONS AREA -->
+				
+				
+				
+				
+			</div> 
+			<!-- END COLUMN -->
+			
+		</div> 
+		<!-- END ROW -->
+		
+	</div>
+	<!-- /END CONTAINER -->
+</div>
+<!-- /END COLOR OVERLAY -->
+
+</section>
+<!-- /END DOWNLOAD SECTION -->
+
+
+<!-- =========================
+     FOOTER 
+============================== -->
+<footer>
+
+<div class="container">
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<!-- LOGO -->
+	<img width="250px" src="images/logo-black@2x.png" alt="LOGO" class="responsive-img">
+	
+	<!-- SOCIAL ICONS -->
+	<!-- <ul class="social-icons">
+		<li><a href=""><i class="social_facebook_square"></i></a></li>
+		<li><a href=""><i class="social_twitter_square"></i></a></li>
+		<li><a href=""><i class="social_pinterest_square"></i></a></li>
+		<li><a href=""><i class="social_googleplus_square"></i></a></li>
+		<li><a href=""><i class="social_instagram_square"></i></a></li>
+		<li><a href=""><i class="social_dribbble_square"></i></a></li>
+		<li><a href=""><i class="social_flickr_square"></i></a></li>
+	</ul> -->
+	
+	<!-- COPYRIGHT TEXT -->
+	<p class="copyright">
+		©2015 Rikke, Ingse &amp; Christian 
+	</p>
+
+</div>
+<!-- /END CONTAINER -->
+ 
+</footer>
+<!-- /END FOOTER -->
+
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.localScroll.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/nivo-lightbox.min.js"></script>
+<script src="js/simple-expand.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/matchMedia.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/custom.js"></script>
+
+
+</body></html>
